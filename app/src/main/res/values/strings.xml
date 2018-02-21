@@ -3,4 +3,6 @@
     <string name="options_add">Add</string>
     <string name="options_delete">Delete</string>
     <string name="options_exit">Exit</string>
+    <string name="default_song_name">Song Name</string>
+    <string name="default_artist_name">Artist Name</string>
 </resources>
