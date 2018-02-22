@@ -3,6 +3,12 @@
     <string name="options_add">Add</string>
     <string name="options_delete">Delete</string>
     <string name="options_exit">Exit</string>
-    <string name="default_song_name">Song Name</string>
-    <string name="default_artist_name">Artist Name</string>
+    <string name="default_song_name">Song Title</string>
+    <string name="default_artist_name">Artist</string>
+    <string name="default_song_wiki">Song Wiki</string>
+    <string name="default_video_url">Video Url</string>
+    <string name="song_name_hint">Enter Song Name</string>
+    <string name="artist_name_hint">Enter Artist Name</string>
+    <string name="song_wiki_url_hint">Enter Song Wiki Url</string>
+    <string name="song_video_url_hint">Enter Song Video Url</string>
 </resources>

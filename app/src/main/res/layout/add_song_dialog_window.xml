@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/dialog_row1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/dialog_song_title_header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/default_song_name"
+        android:textAlignment="textStart"
+        android:textSize="19sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/dialog_song_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:hint="@string/song_name_hint"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_row2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dialog_artist_name_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/default_artist_name"
+            android:textAlignment="textStart"
+            android:textSize="19sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/dialog_artist_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/artist_name_hint"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dialog_song_wiki_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/default_song_wiki"
+            android:textAlignment="textStart"
+            android:textSize="19sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/dialog_song_wiki"
+            android:inputType="textUri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/song_wiki_url_hint"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/dialog_video_url_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/default_video_url"
+            android:textAlignment="textStart"
+            android:textSize="19sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/dialog_video_url"
+            android:inputType="textUri"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/song_video_url_hint"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>
