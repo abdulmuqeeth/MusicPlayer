@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
@@ -36,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
         adapter = new SongAdapter(this, R.layout.listview_item, songsArrayList);
         mainList = (ListView) findViewById(R.id.main_list);
         mainList.setAdapter(adapter);
+
+        mainList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+                song = (Songs) parent.getItemAtPosition(position);
+                //TODO OnItem Click Logic
+            }
+        });
     }
 
     //Method to inflate the options menu with Add, Delete and Exit Options
