@@ -11,4 +11,7 @@
     <string name="artist_name_hint">Enter Artist Name</string>
     <string name="song_wiki_url_hint">Enter Song Wiki Url</string>
     <string name="song_video_url_hint">Enter Song Video Url</string>
+    <string name="add_dialog_title">Enter Song Details</string>
+    <string name="dialog_add">Add</string>
+    <string name="dialog_dismiss">Dismiss</string>
 </resources>
