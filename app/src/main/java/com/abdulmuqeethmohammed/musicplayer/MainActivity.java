@@ -1,10 +1,14 @@
 package com.abdulmuqeethmohammed.musicplayer;
 
+import android.app.ActionBar;
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
 import android.widget.ListView;
 import java.util.ArrayList;
 
@@ -56,7 +60,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void optionAddClicked() {
-        //TODO Add song option functionality
+        final Dialog addDialog = new Dialog(this);
+        addDialog.setContentView(R.layout.add_song_dialog_window);
+        addDialog.show();
+        Window window = addDialog.getWindow();
+        if (window != null) {
+            window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
+        }
     }
 
     private void optionDeleteClicked() {
