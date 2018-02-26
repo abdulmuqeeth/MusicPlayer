@@ -4,8 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,5 +37,29 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater mainPageMenuInflater = getMenuInflater();
         mainPageMenuInflater.inflate(R.menu.main_options_menu, menu);
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.option_add :
+                optionAddClicked();
+                return true;
+            case R.id.option_delete :
+                optionDeleteClicked();
+                return true;
+            case R.id.option_exit :
+                this.finishAndRemoveTask();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void optionAddClicked() {
+        //TODO Add song option functionality
+    }
+
+    private void optionDeleteClicked() {
+        //TODO Delete song option functionality
     }
 }
