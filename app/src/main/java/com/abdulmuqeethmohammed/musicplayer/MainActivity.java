@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mainList.setAdapter(adapter);
     }
 
+    //Method to inflate the options menu with Add, Delete and Exit Options
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater mainPageMenuInflater = getMenuInflater();
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    //Handling a Menu Item Click Event
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.option_add :
@@ -59,13 +63,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Method to display Add Song Dialog Window
     private void optionAddClicked() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.add_dialog_title);
         builder.setView(R.layout.add_song_dialog_window);
-        Dialog addDialog = builder.create();
-        addDialog.show();
-        Window window = addDialog.getWindow();
+
+        final Dialog addSongDialog = builder.create();
+        addSongDialog.show();
+
+        Button add = (Button) addSongDialog.findViewById(R.id.dialog_add);
+        Button dismiss = (Button) addSongDialog.findViewById(R.id.dialog_dismiss);
+
+        //Add Button OnCLick Listener
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO Add Song Logic
+            }
+        });
+
+        //Dismiss button OnClick Listener
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addSongDialog.dismiss();
+            }
+        });
+
+        //Resizing dialog box window
+        Window window = addSongDialog.getWindow();
         if (window != null) {
             window.setLayout(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.WRAP_CONTENT);
         }
