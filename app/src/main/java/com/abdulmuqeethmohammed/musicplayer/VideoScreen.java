@@ -31,7 +31,6 @@ public class VideoScreen extends AppCompatActivity {
         webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setUseWideViewPort(true);
-
         webView.loadUrl(videoUrl);
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/context_play"
+        android:title="@string/context_song_play" />
+    <item
+        android:id="@+id/context_song_wiki"
+        android:title="@string/context_song_wiki" />
+    <item
+        android:id="@+id/context_artist_wiki"
+        android:title="@string/context_artist_wiki" />
+
+</menu>

@@ -17,4 +17,7 @@
     <string name="url_tag">url</string>
     <string name="artist_wiki_url_hint"> Enter Artist Wiki Url</string>
     <string name="default_artist_wiki_url"> Artist Wiki</string>
+    <string name="context_song_play">Play Song</string>
+    <string name="context_song_wiki">Song Wiki</string>
+    <string name="context_artist_wiki">Artist Wiki</string>
 </resources>
