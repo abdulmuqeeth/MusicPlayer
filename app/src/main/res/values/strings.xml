@@ -14,4 +14,5 @@
     <string name="add_dialog_title">Enter Song Details</string>
     <string name="dialog_add">Add</string>
     <string name="dialog_dismiss">Dismiss</string>
+    <string name="url_tag">url</string>
 </resources>

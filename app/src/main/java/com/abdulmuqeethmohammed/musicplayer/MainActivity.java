@@ -3,6 +3,7 @@ package com.abdulmuqeethmohammed.musicplayer;
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                 song = (Songs) parent.getItemAtPosition(position);
-                //TODO OnItem Click Logic
+
+                Intent playVideoIntent = new Intent(MainActivity.this, VideoScreen.class);
+                playVideoIntent.putExtra(getString(R.string.url_tag),song.getVideoUrl());
+                startActivity(playVideoIntent);
             }
         });
     }
