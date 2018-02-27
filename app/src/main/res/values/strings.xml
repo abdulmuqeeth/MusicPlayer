@@ -15,4 +15,6 @@
     <string name="dialog_add">Add</string>
     <string name="dialog_dismiss">Dismiss</string>
     <string name="url_tag">url</string>
+    <string name="artist_wiki_url_hint"> Enter Artist Wiki Url</string>
+    <string name="default_artist_wiki_url"> Artist Wiki</string>
 </resources>
