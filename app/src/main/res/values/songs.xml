@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SongName">
+        <item>"Payphone"</item>
+        <item>"Bailamos"</item>
+        <item>"Hips Don't Lie"</item>
+        <item>"Hey There Delilah"</item>
+        <item>"If We Ever Meet Again"</item>
+    </string-array>
+    <string-array name="ArtistName">
+        <item>"Maroon 5"</item>
+        <item>"Enrique Iglesias"</item>
+        <item>"Shakira"</item>
+        <item>"Plain White T's"</item>
+        <item>"Timbaland"</item>
+    </string-array>
+    <string-array name="SongWiki">
+        <item>"https://en.wikipedia.org/wiki/Payphone_(song)"</item>
+        <item>"https://en.wikipedia.org/wiki/Bailamos"</item>
+        <item>"https://en.wikipedia.org/wiki/Hips_Don%27t_Lie"</item>
+        <item>"https://en.wikipedia.org/wiki/Hey_There_Delilah"</item>
+        <item>"https://en.wikipedia.org/wiki/If_We_Ever_Meet_Again"</item>
+
+    </string-array>
+    <string-array name="ArtistWiki">
+        <item>"https://en.wikipedia.org/wiki/Maroon_5"</item>
+        <item>"https://en.wikipedia.org/wiki/Enrique_Iglesias"</item>
+        <item>"https://en.wikipedia.org/wiki/Shakira"</item>
+        <item>"https://en.wikipedia.org/wiki/Plain_White_T%27s"</item>
+        <item>"https://en.wikipedia.org/wiki/Timbaland"</item>
+    </string-array>
+    <string-array name="VideoUrl">
+        <item>"https://www.youtube.com/watch?v=KRaWnd3LJfs"</item>
+        <item>"https://www.youtube.com/watch?v=ixqOgtNERAQ"</item>
+        <item>"https://www.youtube.com/watch?v=DUT5rEU6pqM"</item>
+        <item>"https://www.youtube.com/watch?v=h_m-BjrxmgI"</item>
+        <item>"https://www.youtube.com/watch?v=KDKva-s_khY"</item>
+    </string-array>
+</resources>

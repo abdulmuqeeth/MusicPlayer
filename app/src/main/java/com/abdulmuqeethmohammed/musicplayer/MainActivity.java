@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -29,12 +30,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Resources res =getResources();
+        String songName [] = res.getStringArray(R.array.SongName);
+        String artistName [] = res.getStringArray(R.array.ArtistName);
+        String songWiki [] = res.getStringArray(R.array.SongWiki);
+        String artistWiki [] = res.getStringArray(R.array.ArtistWiki);
+        String videoUrl [] = res.getStringArray(R.array.VideoUrl);
+
         songsArrayList = new ArrayList<Songs>();
-        songsArrayList.add(new Songs("Payphone","Maroon 5", "https://en.wikipedia.org/wiki/Payphone_(song)","https://www.youtube.com/watch?v=KRaWnd3LJfs", "https://en.wikipedia.org/wiki/Maroon_5"));
-        songsArrayList.add(new Songs("Bailamos","Enrique Iglesias", "https://en.wikipedia.org/wiki/Bailamos","https://www.youtube.com/watch?v=ixqOgtNERAQ", "https://en.wikipedia.org/wiki/Enrique_Iglesias"));
-        songsArrayList.add(new Songs("Hips Don't Lie","Shakira", "https://en.wikipedia.org/wiki/Hips_Don%27t_Lie","https://www.youtube.com/watch?v=DUT5rEU6pqM", "https://en.wikipedia.org/wiki/Shakira"));
-        songsArrayList.add(new Songs("Hey There Delilah","Plain White T's", "https://en.wikipedia.org/wiki/Hey_There_Delilah","https://www.youtube.com/watch?v=h_m-BjrxmgI", "https://en.wikipedia.org/wiki/Plain_White_T%27s"));
-        songsArrayList.add(new Songs("If We Ever Meet Again","Timbaland", "https://en.wikipedia.org/wiki/If_We_Ever_Meet_Again","https://www.youtube.com/watch?v=KDKva-s_khY", "https://en.wikipedia.org/wiki/Timbaland"));
+
+        for (int i=0; i< songName.length ; i++) {
+            songsArrayList.add(new Songs(songName[i], artistName[i], songWiki[i], videoUrl[i], artistWiki[i]));
+        }
 
         adapter = new SongAdapter(this, R.layout.listview_item, songsArrayList);
         mainList = (ListView) findViewById(R.id.main_list);
