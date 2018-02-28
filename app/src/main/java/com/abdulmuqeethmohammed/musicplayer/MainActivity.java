@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import java.util.ArrayList;
 
@@ -24,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private ListView mainList;
     private Songs song;
     private SongAdapter adapter;
+    private EditText addSongName;
+    private EditText addArtistName;
+    private EditText addSongWiki;
+    private EditText addVideoUrl;
+    private EditText addArtistWiki;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         String songName [] = res.getStringArray(R.array.SongName);
         String artistName [] = res.getStringArray(R.array.ArtistName);
         String songWiki [] = res.getStringArray(R.array.SongWiki);
-        String artistWiki [] = res.getStringArray(R.array.ArtistWiki);
         String videoUrl [] = res.getStringArray(R.array.VideoUrl);
+        String artistWiki [] = res.getStringArray(R.array.ArtistWiki);
 
         songsArrayList = new ArrayList<Songs>();
 
@@ -124,11 +130,22 @@ public class MainActivity extends AppCompatActivity {
         Button add = (Button) addSongDialog.findViewById(R.id.dialog_add);
         Button dismiss = (Button) addSongDialog.findViewById(R.id.dialog_dismiss);
 
-        //Add Button OnCLick Listener
+        /*
+         * This method retrieves the data entered into the Add Songs Dialog and Encapsulates it into a Songs object
+         * It also adds the Encapuslated Songs object the arraylist which gets passed to the adapter that is set on the ListView
+         */
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Add Song Logic
+                addSongName = (EditText) addSongDialog.findViewById(R.id.dialog_song_title);
+                addArtistName = (EditText) addSongDialog.findViewById(R.id.dialog_artist_name);
+                addSongWiki = (EditText) addSongDialog.findViewById(R.id.dialog_song_wiki);
+                addVideoUrl = (EditText) addSongDialog.findViewById(R.id.dialog_video_url);
+                addArtistWiki = (EditText) addSongDialog.findViewById(R.id.dialog_artist_wiki);
+                song =new Songs(addSongName.getText().toString(), addArtistName.getText().toString(), addSongWiki.getText().toString(), addVideoUrl.getText().toString(), addArtistWiki.getText().toString());
+                songsArrayList.add(song);
+                addSongDialog.dismiss();
+                adapter.notifyDataSetChanged();
             }
         });
 
