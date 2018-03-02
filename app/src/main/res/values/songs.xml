@@ -30,10 +30,10 @@
         <item>"https://en.wikipedia.org/wiki/Timbaland"</item>
     </string-array>
     <string-array name="VideoUrl">
-        <item>"https://www.youtube.com/watch?v=KRaWnd3LJfs"</item>
-        <item>"https://www.youtube.com/watch?v=ixqOgtNERAQ"</item>
-        <item>"https://www.youtube.com/watch?v=DUT5rEU6pqM"</item>
-        <item>"https://www.youtube.com/watch?v=h_m-BjrxmgI"</item>
-        <item>"https://www.youtube.com/watch?v=KDKva-s_khY"</item>
+        <item>"http://www.dailymotion.com/embed/video/x5icwuq"</item>
+        <item>http://www.dailymotion.com/embed/video/xlpve</item>
+        <item>http://www.dailymotion.com/embed/video/x31tnzb</item>
+        <item>http://www.dailymotion.com/embed/video/x3qxoc</item>
+        <item>https://www.dailymotion.com/embed/video/xciopm</item>
     </string-array>
 </resources>
