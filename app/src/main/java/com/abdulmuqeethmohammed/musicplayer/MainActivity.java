@@ -11,6 +11,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText addSongWiki;
     private EditText addVideoUrl;
     private EditText addArtistWiki;
+
+    private static final int OPTION_ADD_ID = -100;
+    private static final int OPTION_DELETE_ID = -101;
+    private static final int OPTION_EXIT_ID = -102;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,24 +98,40 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //Method to inflate the options menu with Add, Delete and Exit Options
+    //Method to check if the activity should display an Options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater mainPageMenuInflater = getMenuInflater();
-        mainPageMenuInflater.inflate(R.menu.main_options_menu, menu);
+        onPrepareOptionsMenu(menu);
         return true;
+    }
+
+    /*
+    *This method is called every time the Menu option is selected
+    *This method is used to populate the Menu and SubMenu dynamically
+    */
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.clear();
+        menu.add(Menu.NONE, OPTION_ADD_ID, Menu.NONE, R.string.options_add);
+        SubMenu deleteSubMenu = menu.addSubMenu(Menu.NONE,OPTION_DELETE_ID,Menu.NONE,R.string.options_delete);
+
+        //Add Items to Submenu
+        for (Songs song: songsArrayList)
+        {
+            deleteSubMenu.add(Menu.NONE,songsArrayList.indexOf(song),Menu.NONE, song.getSongTitle());
+        }
+
+        menu.add(Menu.NONE, OPTION_EXIT_ID, Menu.NONE, R.string.options_exit);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     //Handling a Menu Item Click Event
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.option_add :
+            case OPTION_ADD_ID :
                 optionAddClicked();
                 return true;
-            case R.id.option_delete :
-                optionDeleteClicked();
-                return true;
-            case R.id.option_exit :
+            case OPTION_EXIT_ID :
                 this.finishAndRemoveTask();
                 return true;
             default:
