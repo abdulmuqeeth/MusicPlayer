@@ -18,6 +18,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -127,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Handling a Menu Item Click Event
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //Delete song if it was selected from delete SubMenu
+        songDelete(item);
+
         switch (item.getItemId()) {
             case OPTION_ADD_ID :
                 optionAddClicked();
@@ -185,8 +191,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void optionDeleteClicked() {
-        //TODO Delete song option functionality
+    /*
+    *   This method deletes a song form the list and updates the list
+    *   This method takes the MenuItem as a parameter
+    *   Checks if the item ID is one from the items in delete menu
+    *   Deletes a song only if there are more than 1 items in the list
+    */
+    private void songDelete(MenuItem item) {
+        try {
+            if(adapter.getCount() > 1) {
+                Songs toDelete = adapter.getItem((item.getItemId()));
+                adapter.remove(toDelete);
+                adapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(), "Removed: "+toDelete.getSongTitle(), Toast.LENGTH_SHORT).show();
+            }
+            else if(item.getItemId()!= OPTION_DELETE_ID) {
+                Toast.makeText(getApplicationContext(),"You should have atleast one song on the list", Toast.LENGTH_SHORT).show();
+            }
+        }
+        catch (ArrayIndexOutOfBoundsException e){
+            ;
+        }
+
     }
 
     //Method to call VideoScreenActivity when play song option is selected
