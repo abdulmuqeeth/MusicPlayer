@@ -28,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
     private ListView mainList;
     private Songs song;
     private SongAdapter adapter;
-    private EditText addSongName;
-    private EditText addArtistName;
-    private EditText addSongWiki;
-    private EditText addVideoUrl;
-    private EditText addArtistWiki;
+    private String addSongName;
+    private String addArtistName;
+    private String addSongWiki;
+    private String addVideoUrl;
+    private String addArtistWiki;
 
     private static final int OPTION_ADD_ID = -100;
     private static final int OPTION_DELETE_ID = -101;
@@ -164,15 +164,27 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSongName = (EditText) addSongDialog.findViewById(R.id.dialog_song_title);
-                addArtistName = (EditText) addSongDialog.findViewById(R.id.dialog_artist_name);
-                addSongWiki = (EditText) addSongDialog.findViewById(R.id.dialog_song_wiki);
-                addVideoUrl = (EditText) addSongDialog.findViewById(R.id.dialog_video_url);
-                addArtistWiki = (EditText) addSongDialog.findViewById(R.id.dialog_artist_wiki);
-                song =new Songs(addSongName.getText().toString(), addArtistName.getText().toString(), addSongWiki.getText().toString(), addVideoUrl.getText().toString(), addArtistWiki.getText().toString());
-                songsArrayList.add(song);
-                addSongDialog.dismiss();
-                adapter.notifyDataSetChanged();
+                addSongName = ((EditText) addSongDialog.findViewById(R.id.dialog_song_title)).getText().toString();
+                addArtistName = ((EditText) addSongDialog.findViewById(R.id.dialog_artist_name)).getText().toString();
+                addSongWiki = ((EditText) addSongDialog.findViewById(R.id.dialog_song_wiki)).getText().toString();
+                addVideoUrl = ((EditText) addSongDialog.findViewById(R.id.dialog_video_url)).getText().toString();
+                addArtistWiki = ((EditText) addSongDialog.findViewById(R.id.dialog_artist_wiki)).getText().toString();
+
+                if (addSongName.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Song Name", Toast.LENGTH_SHORT).show();
+                }
+                else if (addArtistName.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Artist Name", Toast.LENGTH_SHORT).show();
+                }
+                else if (addVideoUrl.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Video URL", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    song =new Songs(addSongName, addArtistName, addSongWiki, addVideoUrl, addArtistWiki);
+                    adapter.add(song);
+                    addSongDialog.dismiss();
+                    adapter.notifyDataSetChanged();
+                }
             }
         });
 
@@ -212,7 +224,6 @@ public class MainActivity extends AppCompatActivity {
         catch (ArrayIndexOutOfBoundsException e){
             ;
         }
-
     }
 
     //Method to call VideoScreenActivity when play song option is selected
