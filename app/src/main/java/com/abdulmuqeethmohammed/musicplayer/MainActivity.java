@@ -138,7 +138,8 @@ public class MainActivity extends AppCompatActivity {
                 optionAddClicked();
                 return true;
             case OPTION_EXIT_ID :
-                this.finishAndRemoveTask();
+                finish();
+                System.exit(0);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -184,6 +185,7 @@ public class MainActivity extends AppCompatActivity {
                     adapter.add(song);
                     addSongDialog.dismiss();
                     adapter.notifyDataSetChanged();
+                    Toast.makeText(getApplicationContext(), addSongName+" added successfully!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
