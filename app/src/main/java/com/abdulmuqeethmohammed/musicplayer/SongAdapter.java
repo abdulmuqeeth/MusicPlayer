@@ -22,7 +22,7 @@ public class SongAdapter extends ArrayAdapter<Songs> {
     private Context mContext;
 
     public SongAdapter (Context context, int layoutResourceId, ArrayList<Songs> songList) {
-        super(context, R.layout.listview_item, songList);
+        super(context, layoutResourceId, songList);
         this.layoutResourceId = layoutResourceId;
         this.songList = songList;
         this.mContext = context;

@@ -19,8 +19,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
+
+/**
+ * Created by Abdul Muqeeth Mohammed
+ */
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int OPTION_ADD_ID = -100;
     private static final int OPTION_DELETE_ID = -101;
     private static final int OPTION_EXIT_ID = -102;
+    private static final int OPTION_ABOUT_ID = -103;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Resources res =getResources();
+
         String songName [] = res.getStringArray(R.array.SongName);
         String artistName [] = res.getStringArray(R.array.ArtistName);
         String songWiki [] = res.getStringArray(R.array.SongWiki);
@@ -124,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         menu.add(Menu.NONE, OPTION_EXIT_ID, Menu.NONE, R.string.options_exit);
+        menu.add(Menu.NONE, OPTION_ABOUT_ID, Menu.NONE, R.string.options_about);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -140,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
             case OPTION_EXIT_ID :
                 finish();
                 System.exit(0);
+                return true;
+            case OPTION_ABOUT_ID :
+                about();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -248,5 +257,10 @@ public class MainActivity extends AppCompatActivity {
         Intent VideoScreenActivityIntent = new Intent(MainActivity.this, VideoScreen.class);
         VideoScreenActivityIntent.putExtra(getString(R.string.url_tag),song.getArtistWiki());
         startActivity(VideoScreenActivityIntent);
+    }
+
+    private void about() {
+        Intent startAbout = new Intent(MainActivity.this, AboutActivity.class);
+        startActivity(startAbout);
     }
 }

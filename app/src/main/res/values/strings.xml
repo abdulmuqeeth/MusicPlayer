@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MusicPlayer</string>
+    <string name="app_name">Musick</string>
     <string name="options_add">Add</string>
     <string name="options_delete">Delete</string>
     <string name="options_exit">Exit</string>
@@ -20,4 +20,8 @@
     <string name="context_song_play">Play Song</string>
     <string name="context_song_wiki">Song Wiki</string>
     <string name="context_artist_wiki">Artist Wiki</string>
+    <string name="options_about">About</string>
+    <string name="copyRight">Copyright \u00A9 2018 Abdul Muqeeth Mohammed. All rights reserved.</string>
+    <string name="appDescription">Made with \u2764 in Chicago, IL</string>
+    <string name="appaNameAbout">Musick\u2122</string>
 </resources>
